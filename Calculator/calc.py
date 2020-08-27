@@ -3,6 +3,7 @@
 # This will have two functions, a small menu with two calculations
 # one part will do a calculation based on two numbers and an operator
 # one calculation for finding BMI (body mass index)
+#test
 
 import os
 
