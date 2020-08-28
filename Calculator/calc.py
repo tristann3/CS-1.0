@@ -6,14 +6,16 @@
 #test 2
 
 import os
-
+import math
 
 def performCalculation():
-    print("\n\nWelcome to my Calculator, in order for this to function, you may use one of the four operators: + - * /\n" +
-          "So, tell me what you would like me to calculate")
+    os.system("clear")
+    print("Welcome to my Calculator\nYou may use one of the four operators: + - * /\n")
     firstNum = int(input("First number: "))
     operator = input("Operator: ")
     secondNum = int(input("Second number: "))
+
+    
 
     if (operator == "+"):
         answer = firstNum + secondNum
@@ -24,31 +26,53 @@ def performCalculation():
     elif (operator == "/"):
         answer = firstNum / secondNum
     else:
-        print("oh no! you cannot use that operator")
+        print("\noh no! you cannot use that operator")
+        input("\n\nPress Enter...")
         os.system("clear")
         startingMenu()
-    print(answer)
+
+    print(f"\n\n{firstNum} {operator} {secondNum} is {answer}")
+    input("\n\nPress Enter...")
+
     startingMenu()
 
 
 def calculateBMI():
     os.system("clear")
-    print("Welcome to BMI Calculator\n\n")
-    height = input("Enter your height(in inches)")
-    weight = input("Enter your weight(in pounds)")
+    print("Welcome to my BMI Calculator\n\n")
+
+    height = int(input("Enter your height(in inches)"))
+    weight = int(input("Enter your weight(in pounds)"))
+    BMI = round((weight / (height**2) * 703),2)
     
+    print(f"\n\nYour BMI is {BMI}")
+    input("\n\nPress Enter...")
+
+    startingMenu()
 
 
 def startingMenu():
-    print("\nWhat would you like to do?\n\n")
+    os.system("clear")
+
+    print("Hello, Welcome to my Calculation Program!\n\n")
+    print("What would you like to do?\n\n")
     selection = input("1) Perform a calculation\n" +
-                      "2) Calculate your BMI\n")
+                      "2) Calculate your BMI\n" +
+                      "3) Exit\n")
     if (selection == "1"):
         performCalculation()
     elif (selection == "2"):
         calculateBMI()
-    else:
+    elif (selection == "3"):
         exit()
+    else:
+        startingMenu()
+
 os.system("clear")
-print("Hello, Welcome to my Calculation Program!")
+
+# if type(5) == int:
+#     print("hooray!")
+    
+
 startingMenu()
+
