@@ -22,21 +22,25 @@ def performCalculation():
     elif (operator == "*"):
         answer = firstNum * secondNum
     elif (operator == "/"):
-    answer = firstNum / secondNum
+        answer = firstNum / secondNum
     else:
         print("oh no! you cannot use that operator")
         os.system("clear")
         startingMenu()
     print(answer)
+    startingMenu()
 
 
 def calculateBMI():
-    print("hello")
+    os.system("clear")
+    print("Welcome to BMI Calculator\n\n")
+    height = input("Enter your height(in inches)")
+    weight = input("Enter your weight(in pounds)")
+    
 
 
 def startingMenu():
-    print("Hello, Welcome to my Calculation Program!\n" +
-          "What would you like to do?\n\n")
+    print("\nWhat would you like to do?\n\n")
     selection = input("1) Perform a calculation\n" +
                       "2) Calculate your BMI\n")
     if (selection == "1"):
@@ -45,5 +49,6 @@ def startingMenu():
         calculateBMI()
     else:
         exit()
-
+os.system("clear")
+print("Hello, Welcome to my Calculation Program!")
 startingMenu()
