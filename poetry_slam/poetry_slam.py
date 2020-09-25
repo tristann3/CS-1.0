@@ -20,25 +20,22 @@ def lines_printed_random(lines_list):
         print(lines_list[rand_line])
 
 #this will print my list in a first-last pattern so it will print line 1, then 18, 2, 17 and so on...until it reaches
-def lines_printed_custom(lines_list):
-    small_line = 0
-    big_line = len(lines_list) - 1
-    for line in lines_list:
-        print(f"{small_line + 1} {lines_list[small_line]}")
-        print(f"{big_line + 1} {lines_list[big_line]}")
-        small_line += 1
-        big_line -= 1
-        if (big_line == 9): # this means the loop ran 9 times which will means the file is complete
-            break
-
+def lines_printed_custon(lines_list):
+    for x in range(int(len(lines_list)/2)):
+        print(f"{x+1} {lines_list[x]}")
+        print(f"{len(lines_list) - x} {lines_list[len(lines_list) - x - 1]}" )
         
+        # if(x%2) == 0:
+        #     print(f"{x+1} {lines_list[x]}")
+        # else:
+        #     print(f"{len(lines_list) - x+1 } {lines_list[x*-1]}")  
 
 
 file = "poem.txt"
 file_lines = get_file_lines(file)
 
-# lines_printed_backwards(file_lines)
+lines_printed_backwards(file_lines)
 
-# lines_printed_random(file_lines)
+lines_printed_random(file_lines)
 
 lines_printed_custom(file_lines)
