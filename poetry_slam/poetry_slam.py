@@ -1,6 +1,6 @@
 import random
 
-#this will read all the lines of the file and return a list of line strings
+# this will read all the lines of the file and return a list of line strings
 def get_file_lines(filename):
     return open(filename, "r").readlines()
 
@@ -19,7 +19,7 @@ def lines_printed_random(lines_list):
         rand_line = random.randint(1,total_lines)
         print(lines_list[rand_line])
 
-#this will print my list in a first-last pattern so it will print line 1, then 18, 2, 17 and so on...until it reaches the end of the poem
+# this will print my list in a first-last pattern so it will print line 1, then 18, 2, 17 and so on...until it reaches the end of the poem
 def lines_printed_custom(lines_list):
     nl = '\n'
     for x in range(int(len(lines_list)/2)): # this is the length of the list divided by two because we are printing 2 lines per iteration
@@ -30,8 +30,8 @@ def lines_printed_custom(lines_list):
 file = "poem.txt"
 file_lines = get_file_lines(file)
 
-# lines_printed_backwards(file_lines)
+#lines_printed_backwards(file_lines)
 
-# lines_printed_random(file_lines)
+#lines_printed_random(file_lines)
 
 lines_printed_custom(file_lines)
